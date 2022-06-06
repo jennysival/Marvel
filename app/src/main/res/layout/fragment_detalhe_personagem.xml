@@ -20,6 +20,7 @@
         android:gravity="center_horizontal" />
 
     <TextView
+        android:id="@+id/tv_texto_descricao_personagem"
         android:layout_width="@dimen/largura_0"
         android:layout_height="@dimen/altura_0"
         android:text="@string/texto_descricao_vampira"
