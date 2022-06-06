@@ -15,5 +15,9 @@
     <fragment
         android:id="@+id/detalhePersonagemFragment"
         android:name="br.com.zup.marvel.fragments.DetalhePersonagemFragment"
-        android:label="DetalhePersonagemFragment" />
+        android:label="DetalhePersonagemFragment" >
+        <action
+            android:id="@+id/action_detalhePersonagemFragment_to_listaPersonagensFragment"
+            app:destination="@id/listaPersonagensFragment" />
+    </fragment>
 </navigation>

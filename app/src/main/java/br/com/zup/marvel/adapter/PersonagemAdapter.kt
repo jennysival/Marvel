@@ -7,7 +7,8 @@ import br.com.zup.marvel.databinding.PersonagemItemBinding
 import br.com.zup.marvel.model.Personagem
 
 class PersonagemAdapter(
-    private var listaDePersonagens: MutableList<Personagem>
+    private var listaDePersonagens: MutableList<Personagem>,
+    private val clickPersonagem: (personagem: Personagem) -> Unit
 ): RecyclerView.Adapter<PersonagemAdapter.ViewHolder>() {
 
     class ViewHolder(val binding: PersonagemItemBinding): RecyclerView.ViewHolder(binding.root){
@@ -24,6 +25,9 @@ class PersonagemAdapter(
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val personagem = listaDePersonagens[position]
         holder.exibirPersonagem(personagem)
+        holder.binding.cvItemLista.setOnClickListener {
+            clickPersonagem(personagem)
+        }
     }
 
     override fun getItemCount(): Int {
