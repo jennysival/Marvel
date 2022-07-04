@@ -13,7 +13,7 @@ class PersonagemAdapter(
 
     class ViewHolder(val binding: PersonagemItemBinding): RecyclerView.ViewHolder(binding.root){
         fun exibirPersonagem(personagem: Personagem){
-            binding.tvNomePersonagemLista.text = personagem.getNome()
+//            binding.tvNomePersonagemLista.text = personagem.getNome()
         }
     }
 

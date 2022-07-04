@@ -33,8 +33,8 @@ class DetalhePersonagemFragment : Fragment() {
         val personagem = arguments?.getParcelable<Personagem>(CHAVE_PERSONAGEM)
 
         if(personagem != null){
-            binding.tvNomePersonagem.text = personagem.getNome()
-            binding.tvTextoDescricaoPersonagem.text = personagem.getDescricao()
+//            binding.tvNomePersonagem.text = personagem.getNome()
+//            binding.tvTextoDescricaoPersonagem.text = personagem.getDescricao()
         }
     }
 }
