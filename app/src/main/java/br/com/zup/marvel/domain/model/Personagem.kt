@@ -1,4 +1,4 @@
-package br.com.zup.marvel.model
+package br.com.zup.marvel.domain.model
 
 import android.os.Parcelable
 import kotlinx.parcelize.Parcelize

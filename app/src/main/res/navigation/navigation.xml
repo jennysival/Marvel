@@ -6,7 +6,7 @@
 
     <fragment
         android:id="@+id/listaPersonagensFragment"
-        android:name="br.com.zup.marvel.fragments.ListaPersonagensFragment"
+        android:name="br.com.zup.marvel.ui.listaPersonagens.view.ListaPersonagensFragment"
         android:label="ListaPersonagensFragment" >
         <action
             android:id="@+id/action_listaPersonagensFragment_to_detalhePersonagemFragment"
@@ -14,7 +14,7 @@
     </fragment>
     <fragment
         android:id="@+id/detalhePersonagemFragment"
-        android:name="br.com.zup.marvel.fragments.DetalhePersonagemFragment"
+        android:name="br.com.zup.marvel.ui.detalhePersonagem.view.DetalhePersonagemFragment"
         android:label="DetalhePersonagemFragment" >
         <action
             android:id="@+id/action_detalhePersonagemFragment_to_listaPersonagensFragment"

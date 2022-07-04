@@ -1,4 +1,4 @@
-package br.com.zup.marvel.fragments
+package br.com.zup.marvel.ui.listaPersonagens.view
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -10,9 +10,9 @@ import androidx.navigation.fragment.NavHostFragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import br.com.zup.marvel.CHAVE_PERSONAGEM
 import br.com.zup.marvel.R
-import br.com.zup.marvel.adapter.PersonagemAdapter
+import br.com.zup.marvel.ui.adapter.PersonagemAdapter
 import br.com.zup.marvel.databinding.FragmentListaPersonagensBinding
-import br.com.zup.marvel.model.Personagem
+import br.com.zup.marvel.domain.model.Personagem
 
 class ListaPersonagensFragment : Fragment() {
     private lateinit var binding: FragmentListaPersonagensBinding

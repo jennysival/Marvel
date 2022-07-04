@@ -1,10 +1,10 @@
-package br.com.zup.marvel.adapter
+package br.com.zup.marvel.ui.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import br.com.zup.marvel.databinding.PersonagemItemBinding
-import br.com.zup.marvel.model.Personagem
+import br.com.zup.marvel.domain.model.Personagem
 
 class PersonagemAdapter(
     private var listaDePersonagens: MutableList<Personagem>,
