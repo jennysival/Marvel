@@ -3,8 +3,15 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navigation"
-    app:startDestination="@id/listaPersonagensFragment">
-
+    app:startDestination="@id/addPersonagemFragment">
+    <fragment
+        android:id="@+id/addPersonagemFragment"
+        android:name="br.com.zup.marvel.ui.addPersonagem.view.AddPersonagemFragment"
+        android:label="AddPersonagemFragment" >
+        <action
+            android:id="@+id/action_addPersonagemFragment_to_listaPersonagensFragment"
+            app:destination="@id/listaPersonagensFragment" />
+    </fragment>
     <fragment
         android:id="@+id/listaPersonagensFragment"
         android:name="br.com.zup.marvel.ui.listaPersonagens.view.ListaPersonagensFragment"
@@ -17,13 +24,4 @@
         android:id="@+id/detalhePersonagemFragment"
         android:name="br.com.zup.marvel.ui.detalhePersonagem.view.DetalhePersonagemFragment"
         android:label="DetalhePersonagemFragment" />
-    <fragment
-        android:id="@+id/addPersonagemFragment"
-        android:name="br.com.zup.marvel.ui.addPersonagem.view.AddPersonagemFragment"
-        android:label="fragment_add_personagem"
-        tools:layout="@layout/fragment_add_personagem" >
-        <action
-            android:id="@+id/action_addPersonagemFragment_to_listaPersonagensFragment"
-            app:destination="@id/listaPersonagensFragment" />
-    </fragment>
 </navigation>
