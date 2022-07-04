@@ -6,4 +6,8 @@
     <string name="texto_nome_vampira">Vampira</string>
     <string name="texto_descricao_vampira">Vampira é uma mutante Nivel Omega, personagem de histórias em quadrinhos da editora Marvel Comics. Vampira é integrante de algumas equipes dos X-Men e dos Vingadores</string>
     <string name="texto_botao_voltar">Voltar</string>
+    <string name="hint_nome_do_personagem">Nome do personagem</string>
+    <string name="hint_descri_o_do_personagem">Descrição do Personagem</string>
+    <string name="texto_adicione_um_personagem_da_marvel">Adicione um Personagem da Marvel</string>
+    <string name="texto_cadastrar_personagem">Cadastrar personagem</string>
 </resources>

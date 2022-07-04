@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navigation"
     app:startDestination="@id/listaPersonagensFragment">
 
@@ -18,6 +19,15 @@
         android:label="DetalhePersonagemFragment" >
         <action
             android:id="@+id/action_detalhePersonagemFragment_to_listaPersonagensFragment"
+            app:destination="@id/listaPersonagensFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addPersonagemFragment"
+        android:name="br.com.zup.marvel.ui.addPersonagem.view.AddPersonagemFragment"
+        android:label="fragment_add_personagem"
+        tools:layout="@layout/fragment_add_personagem" >
+        <action
+            android:id="@+id/action_addPersonagemFragment_to_listaPersonagensFragment"
             app:destination="@id/listaPersonagensFragment" />
     </fragment>
 </navigation>

@@ -1,4 +1,4 @@
-package br.com.zup.marvel.ui.addPersonagem
+package br.com.zup.marvel.ui.addPersonagem.view
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
