@@ -27,10 +27,6 @@ class DetalhePersonagemFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         recuperarDadosPersonagem()
-
-        binding.btnVoltar.setOnClickListener {
-            NavHostFragment.findNavController(this).navigate(R.id.action_detalhePersonagemFragment_to_listaPersonagensFragment)
-        }
     }
 
     private fun recuperarDadosPersonagem(){
