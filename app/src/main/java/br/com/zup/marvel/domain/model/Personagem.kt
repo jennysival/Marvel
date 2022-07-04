@@ -1,12 +1,22 @@
 package br.com.zup.marvel.domain.model
 
 import android.os.Parcelable
+import androidx.room.ColumnInfo
+import androidx.room.Entity
+import androidx.room.PrimaryKey
 import kotlinx.parcelize.Parcelize
 
 @Parcelize
+@Entity
+data class Personagem(
+    @PrimaryKey(autoGenerate = true)
+    @ColumnInfo(name = "cod_personagem")
+    var codPersonagem: Long = 1,
 
-class Personagem(private var nome: String, private var descricao: String) : Parcelable{
+    @ColumnInfo(name = "nome_personagem")
+    var nome: String,
 
-    fun getNome() = nome
-    fun getDescricao() = descricao
-}
+    @ColumnInfo(name = "descricao_personagem")
+    var descricao: String
+    )
+    : Parcelable

@@ -1,4 +1,4 @@
-package br.com.zup.marvel.ui.adapter
+package br.com.zup.marvel.ui.listaPersonagens.view.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

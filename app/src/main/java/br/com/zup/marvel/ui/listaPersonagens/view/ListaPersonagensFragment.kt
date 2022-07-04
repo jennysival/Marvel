@@ -10,7 +10,7 @@ import androidx.navigation.fragment.NavHostFragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import br.com.zup.marvel.CHAVE_PERSONAGEM
 import br.com.zup.marvel.R
-import br.com.zup.marvel.ui.adapter.PersonagemAdapter
+import br.com.zup.marvel.ui.listaPersonagens.view.adapter.PersonagemAdapter
 import br.com.zup.marvel.databinding.FragmentListaPersonagensBinding
 import br.com.zup.marvel.domain.model.Personagem
 
