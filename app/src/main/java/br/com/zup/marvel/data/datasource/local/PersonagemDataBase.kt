@@ -4,12 +4,10 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import androidx.room.TypeConverters
 import br.com.zup.marvel.data.datasource.local.dao.PersonagemDAO
 import br.com.zup.marvel.domain.model.PersonagemModel
 
 @Database(entities = [PersonagemModel::class], version = 1)
-@TypeConverters(Converters::class)
 abstract class PersonagemDataBase: RoomDatabase() {
     abstract fun personagemDao(): PersonagemDAO
 
