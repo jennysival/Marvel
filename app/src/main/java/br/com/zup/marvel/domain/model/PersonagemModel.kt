@@ -7,16 +7,15 @@ import androidx.room.PrimaryKey
 import kotlinx.parcelize.Parcelize
 
 @Parcelize
-@Entity(tableName = "personagem")
+@Entity(tableName = "personagens")
 data class PersonagemModel(
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "cod_personagem")
-    var cod_personagem: Long = 1,
+    var codPersonagem: Long = 1,
 
     @ColumnInfo(name = "nome_personagem")
     var nome: String,
 
     @ColumnInfo(name = "descricao_personagem")
     var descricao: String
-    )
-    : Parcelable
+    ) : Parcelable
