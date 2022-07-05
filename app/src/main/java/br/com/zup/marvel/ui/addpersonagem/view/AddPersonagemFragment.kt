@@ -12,8 +12,6 @@ import br.com.zup.marvel.ui.addpersonagem.viewmodel.AddPersonagemViewModel
 
 class AddPersonagemFragment : Fragment() {
     private lateinit var binding: FragmentAddPersonagemBinding
-    private var viewModel = AddPersonagemViewModel()
-
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -27,7 +25,7 @@ class AddPersonagemFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.btnCadastrar.setOnClickListener {
-            viewModel.criarPersonagem(binding.etNomePersonagem.text.toString(), binding.etDescricaoPersonagem.text.toString())
+
         }
 
         binding.btnVerLista.setOnClickListener {
