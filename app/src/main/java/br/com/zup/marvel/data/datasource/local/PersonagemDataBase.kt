@@ -20,6 +20,7 @@ abstract class PersonagemDataBase: RoomDatabase() {
         @Volatile
         private var INSTANCE: PersonagemDataBase? = null
 
+        //o context do parametro abaixo vai ser a application no usecase
         fun getDatabase(context: Context): PersonagemDataBase {
             val tempInstance = INSTANCE
             if (tempInstance != null) {
