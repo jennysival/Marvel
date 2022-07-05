@@ -15,10 +15,7 @@ class AddPersonagemViewModel(application: Application): AndroidViewModel(applica
     fun insertPersonagem(personagem: PersonagemModel){
         //TODO: O que é esse viewModelScope.launch?
         //TODO: Como eu trato as exceptions nesse caso?
-        viewModelScope.launch {
             personagemUseCase.insertPersonagem(personagem)
-        }
-
     }
 
 }
