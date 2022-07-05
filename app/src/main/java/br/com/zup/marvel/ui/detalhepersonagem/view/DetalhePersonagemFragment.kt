@@ -30,9 +30,9 @@ class DetalhePersonagemFragment : Fragment() {
     private fun recuperarDadosPersonagem(){
         val personagemModel = arguments?.getParcelable<PersonagemModel>(CHAVE_PERSONAGEM)
 
-        if(personagemModel != null){
-//            binding.tvNomePersonagem.text = personagem.getNome()
-//            binding.tvTextoDescricaoPersonagem.text = personagem.getDescricao()
+        personagemModel?.let {
+            binding.tvNomePersonagem.text = it.nome
+            binding.tvTextoDescricaoPersonagem.text = it.descricao
         }
     }
 }
