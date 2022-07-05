@@ -4,7 +4,6 @@ import android.app.Application
 import br.com.zup.marvel.data.datasource.local.PersonagemDataBase
 import br.com.zup.marvel.domain.model.PersonagemModel
 import br.com.zup.marvel.domain.repository.PersonagemRepository
-import br.com.zup.marvel.ui.addpersonagem.view.Personagem
 
 class PersonagemUseCase(application: Application) {
     private val personagemDAO = PersonagemDataBase.getDatabase(application).personagemDao()
@@ -15,7 +14,7 @@ class PersonagemUseCase(application: Application) {
         return personagemRepository.getAllPersonagens()
     }
 
-    suspend fun insertPersonagens(personagem: PersonagemModel){
+    suspend fun insertPersonagem(personagem: PersonagemModel){
         personagemRepository.insertPersonagem(personagem)
     }
 
