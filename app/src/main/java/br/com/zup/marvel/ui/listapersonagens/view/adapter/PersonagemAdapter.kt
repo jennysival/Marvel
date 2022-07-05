@@ -39,6 +39,7 @@ class PersonagemAdapter(
         if (listaDePersonagens.size == 0){
             listaDePersonagens = novaLista as MutableList<PersonagemModel>
         }else{
+            listaDePersonagens = mutableListOf<PersonagemModel>()
             listaDePersonagens.addAll(novaLista)
         }
         notifyDataSetChanged()

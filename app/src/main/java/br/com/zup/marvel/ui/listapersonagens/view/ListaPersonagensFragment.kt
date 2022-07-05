@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.core.os.bundleOf
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.NavHostFragment
@@ -15,6 +16,7 @@ import br.com.zup.marvel.ui.listapersonagens.view.adapter.PersonagemAdapter
 import br.com.zup.marvel.databinding.FragmentListaPersonagensBinding
 import br.com.zup.marvel.domain.model.PersonagemModel
 import br.com.zup.marvel.ui.listapersonagens.viewmodel.ListaPersonagensViewModel
+import br.com.zup.marvel.ui.viewstate.ViewState
 
 class ListaPersonagensFragment : Fragment() {
     private lateinit var binding: FragmentListaPersonagensBinding
@@ -60,8 +62,20 @@ class ListaPersonagensFragment : Fragment() {
     }
 
     private fun initObserver(){
-        viewModel.listaPersonagens.observe(this.viewLifecycleOwner){
-            personagemAdapter.atualizarLista(it)
+        viewModel.personagemListState.observe(this.viewLifecycleOwner){
+            when (it) {
+                is ViewState.Success -> {
+                    personagemAdapter.atualizarLista(it.data)
+                }
+                is ViewState.Error -> {
+                    Toast.makeText(
+                        context,
+                        "${it.throwable.message}",
+                        Toast.LENGTH_LONG
+                    ).show()
+                }
+                else -> {}
+            }
         }
     }
 }

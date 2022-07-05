@@ -18,10 +18,10 @@ class AddPersonagemViewModel(application: Application): AndroidViewModel(applica
     fun insertPersonagem(personagem: Personagem){
         //TODO: O que é esse viewModelScope.launch?
         //TODO: Como eu trato as exceptions nesse caso?
+
         viewModelScope.launch {
             withContext(Dispatchers.IO){
-                val personagemModel = PersonagemModel(nome = personagem.nome, descricao = personagem.descricao)
-                personagemUseCase.insertPersonagem(personagemModel)
+                personagemUseCase.insertPersonagem(personagem)
             }
 
         }

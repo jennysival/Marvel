@@ -36,11 +36,12 @@ class AddPersonagemFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val nome = binding.etNomePersonagem.text.toString()
-        val descricao = binding.etDescricaoPersonagem.text.toString()
-        val personagem = Personagem(nome, descricao)
+
 
         binding.btnCadastrar.setOnClickListener {
+            val nome = binding.etNomePersonagem.text.toString()
+            val descricao = binding.etDescricaoPersonagem.text.toString()
+            val personagem = Personagem(nome, descricao)
             viewModel.insertPersonagem(personagem)
             Toast.makeText(context, "Cadastro com sucesso!", Toast.LENGTH_LONG).show()
         }
