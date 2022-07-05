@@ -1,18 +1,18 @@
-package br.com.zup.marvel.ui.listaPersonagens.view.adapter
+package br.com.zup.marvel.ui.listapersonagens.view.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import br.com.zup.marvel.databinding.PersonagemItemBinding
-import br.com.zup.marvel.domain.model.Personagem
+import br.com.zup.marvel.domain.model.PersonagemModel
 
 class PersonagemAdapter(
-    private var listaDePersonagens: MutableList<Personagem>,
-    private val clickPersonagem: (personagem: Personagem) -> Unit
+    private var listaDePersonagens: MutableList<PersonagemModel>,
+    private val clickPersonagem: (personagemModel: PersonagemModel) -> Unit
 ): RecyclerView.Adapter<PersonagemAdapter.ViewHolder>() {
 
     class ViewHolder(val binding: PersonagemItemBinding): RecyclerView.ViewHolder(binding.root){
-        fun exibirPersonagem(personagem: Personagem){
+        fun exibirPersonagem(personagemModel: PersonagemModel){
 //            binding.tvNomePersonagemLista.text = personagem.getNome()
         }
     }
@@ -34,7 +34,7 @@ class PersonagemAdapter(
         return listaDePersonagens.size
     }
 
-    fun atualizarLista(novaLista: MutableList<Personagem>){
+    fun atualizarLista(novaLista: MutableList<PersonagemModel>){
         if (listaDePersonagens.size == 0){
             listaDePersonagens = novaLista
         }else{

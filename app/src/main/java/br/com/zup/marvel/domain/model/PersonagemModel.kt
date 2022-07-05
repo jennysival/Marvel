@@ -7,11 +7,11 @@ import androidx.room.PrimaryKey
 import kotlinx.parcelize.Parcelize
 
 @Parcelize
-@Entity
-data class Personagem(
+@Entity(tableName = "personagem")
+data class PersonagemModel(
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "cod_personagem")
-    var codPersonagem: Long = 1,
+    var cod_personagem: Long = 1,
 
     @ColumnInfo(name = "nome_personagem")
     var nome: String,

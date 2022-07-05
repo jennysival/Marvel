@@ -1,4 +1,4 @@
-package br.com.zup.marvel.ui.addPersonagem.view
+package br.com.zup.marvel.ui.addpersonagem.view
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -8,10 +8,11 @@ import android.view.ViewGroup
 import androidx.navigation.fragment.NavHostFragment
 import br.com.zup.marvel.R
 import br.com.zup.marvel.databinding.FragmentAddPersonagemBinding
-import br.com.zup.marvel.ui.home.view.HomeActivity
+import br.com.zup.marvel.ui.addpersonagem.viewmodel.AddPersonagemViewModel
 
 class AddPersonagemFragment : Fragment() {
     private lateinit var binding: FragmentAddPersonagemBinding
+    private var viewModel = AddPersonagemViewModel()
 
 
     override fun onCreateView(
@@ -26,7 +27,7 @@ class AddPersonagemFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.btnCadastrar.setOnClickListener {
-
+            viewModel.criarPersonagem(binding.etNomePersonagem.text.toString(), binding.etDescricaoPersonagem.text.toString())
         }
 
         binding.btnVerLista.setOnClickListener {

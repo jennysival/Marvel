@@ -1,6 +1,11 @@
 package br.com.zup.marvel.domain.usecase
 
-import android.app.Application
+import br.com.zup.marvel.domain.model.PersonagemModel
+import br.com.zup.marvel.ui.addpersonagem.view.Personagem
 
-class PersonagemUseCase(application: Application) {
+class PersonagemUseCase {
+
+    fun adicionarPersonagemUseCase(personagem: Personagem){
+
+    }
 }

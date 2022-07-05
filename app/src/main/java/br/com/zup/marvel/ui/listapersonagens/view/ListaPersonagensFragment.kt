@@ -1,4 +1,4 @@
-package br.com.zup.marvel.ui.listaPersonagens.view
+package br.com.zup.marvel.ui.listapersonagens.view
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -10,9 +10,9 @@ import androidx.navigation.fragment.NavHostFragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import br.com.zup.marvel.CHAVE_PERSONAGEM
 import br.com.zup.marvel.R
-import br.com.zup.marvel.ui.listaPersonagens.view.adapter.PersonagemAdapter
+import br.com.zup.marvel.ui.listapersonagens.view.adapter.PersonagemAdapter
 import br.com.zup.marvel.databinding.FragmentListaPersonagensBinding
-import br.com.zup.marvel.domain.model.Personagem
+import br.com.zup.marvel.domain.model.PersonagemModel
 
 class ListaPersonagensFragment : Fragment() {
     private lateinit var binding: FragmentListaPersonagensBinding
@@ -42,15 +42,15 @@ class ListaPersonagensFragment : Fragment() {
     }
 
     fun adicionarPersonagemNaLista(){
-        val listaDePersonagens = mutableListOf<Personagem>()
+        val listaDePersonagens = mutableListOf<PersonagemModel>()
 
 
         personagemAdapter.atualizarLista(listaDePersonagens)
         exibirRecyclerView()
     }
 
-    private fun irParaDetalhePersonagem(personagem: Personagem){
-        val bundle = bundleOf(CHAVE_PERSONAGEM to personagem)
+    private fun irParaDetalhePersonagem(personagemModel: PersonagemModel){
+        val bundle = bundleOf(CHAVE_PERSONAGEM to personagemModel)
 
         NavHostFragment.findNavController(this).navigate(R.id.action_listaPersonagensFragment_to_detalhePersonagemFragment, bundle)
 
