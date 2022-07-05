@@ -11,7 +11,6 @@ class PersonagemUseCase(application: Application) {
     private val personagemDAO = PersonagemDataBase.getDatabase(application).personagemDao()
     private val personagemRepository = PersonagemRepository(personagemDAO)
 
-    //TODO: Como eu trato o erro caso tenha alguma exception?
     suspend fun getAllPersonagens(): ViewState<List<PersonagemModel>> {
         return try {
             val personagens = personagemRepository.getAllPersonagens()

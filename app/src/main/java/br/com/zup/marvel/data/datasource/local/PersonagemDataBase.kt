@@ -11,8 +11,6 @@ import br.com.zup.marvel.domain.model.PersonagemModel
 abstract class PersonagemDataBase: RoomDatabase() {
     abstract fun personagemDao(): PersonagemDAO
 
-
-    //TODO: Não entendi o que esse companion faz. É padrão pra todos os projetos?
     companion object{
         @Volatile
         private var INSTANCE: PersonagemDataBase? = null

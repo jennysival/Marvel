@@ -16,11 +16,8 @@ import br.com.zup.marvel.ui.addpersonagem.viewmodel.AddPersonagemViewModel
 
 class AddPersonagemFragment : Fragment() {
 
-    //TODO: Como eu coloco botão de voltar nos fragmentos?
-
     private lateinit var binding: FragmentAddPersonagemBinding
 
-    //TODO: Por que usar o by lazy aqui no viewModel ao inves de inicializar direto?
     private val viewModel: AddPersonagemViewModel by lazy {
         ViewModelProvider(this)[AddPersonagemViewModel::class.java]
     }
@@ -46,16 +43,9 @@ class AddPersonagemFragment : Fragment() {
             Toast.makeText(context, "Cadastro com sucesso!", Toast.LENGTH_LONG).show()
         }
 
-//        initObserver()
-
         binding.btnVerLista.setOnClickListener {
             NavHostFragment.findNavController(this).navigate(R.id.action_addPersonagemFragment_to_listaPersonagensFragment)
         }
     }
-
-    //TODO: Preciso de ajuda pra implementar o observer
-//    private fun initObserver() {
-//
-//    }
 
 }

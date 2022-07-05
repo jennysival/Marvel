@@ -13,6 +13,5 @@ interface PersonagemDAO {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insertPersonagem(personagem: PersonagemModel)
-    //TODO: Não sei o que esse onConflict replace faz
 
 }

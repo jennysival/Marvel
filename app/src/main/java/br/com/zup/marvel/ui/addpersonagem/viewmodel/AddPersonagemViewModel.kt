@@ -11,21 +11,16 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
 class AddPersonagemViewModel(application: Application): AndroidViewModel(application) {
-//TODO: Por que esse view model precisa ser AndroidViewModel especificamente?
 
     private val personagemUseCase = PersonagemUseCase(application)
 
     fun insertPersonagem(personagem: Personagem){
-        //TODO: O que é esse viewModelScope.launch?
-        //TODO: Como eu trato as exceptions nesse caso?
 
         viewModelScope.launch {
             withContext(Dispatchers.IO){
                 personagemUseCase.insertPersonagem(personagem)
             }
-
         }
-
     }
 
 }
