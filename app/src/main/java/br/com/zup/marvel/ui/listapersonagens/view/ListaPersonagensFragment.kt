@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.os.bundleOf
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.NavHostFragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import br.com.zup.marvel.CHAVE_PERSONAGEM
@@ -13,12 +14,17 @@ import br.com.zup.marvel.R
 import br.com.zup.marvel.ui.listapersonagens.view.adapter.PersonagemAdapter
 import br.com.zup.marvel.databinding.FragmentListaPersonagensBinding
 import br.com.zup.marvel.domain.model.PersonagemModel
+import br.com.zup.marvel.ui.listapersonagens.viewmodel.ListaPersonagensViewModel
 
 class ListaPersonagensFragment : Fragment() {
     private lateinit var binding: FragmentListaPersonagensBinding
 
     private val personagemAdapter: PersonagemAdapter by lazy {
         PersonagemAdapter(arrayListOf(), this::irParaDetalhePersonagem)
+    }
+
+    private val viewModel: ListaPersonagensViewModel by lazy {
+        ViewModelProvider(this)[ListaPersonagensViewModel::class.java]
     }
 
     override fun onCreateView(
@@ -32,8 +38,13 @@ class ListaPersonagensFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        initObserver()
+        exibirRecyclerView()
+    }
 
-        adicionarPersonagemNaLista()
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        viewModel.getAllPersonagens()
     }
 
     private fun exibirRecyclerView(){
@@ -41,18 +52,16 @@ class ListaPersonagensFragment : Fragment() {
         binding.rvRecyclerLista.layoutManager = LinearLayoutManager(context)
     }
 
-    fun adicionarPersonagemNaLista(){
-        val listaDePersonagens = mutableListOf<PersonagemModel>()
-
-
-        personagemAdapter.atualizarLista(listaDePersonagens)
-        exibirRecyclerView()
-    }
-
     private fun irParaDetalhePersonagem(personagemModel: PersonagemModel){
         val bundle = bundleOf(CHAVE_PERSONAGEM to personagemModel)
 
         NavHostFragment.findNavController(this).navigate(R.id.action_listaPersonagensFragment_to_detalhePersonagemFragment, bundle)
 
+    }
+
+    private fun initObserver(){
+        viewModel.listaPersonagens.observe(this.viewLifecycleOwner){
+            personagemAdapter.atualizarLista(it)
+        }
     }
 }

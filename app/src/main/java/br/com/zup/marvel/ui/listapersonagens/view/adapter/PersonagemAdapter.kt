@@ -13,7 +13,7 @@ class PersonagemAdapter(
 
     class ViewHolder(val binding: PersonagemItemBinding): RecyclerView.ViewHolder(binding.root){
         fun exibirPersonagem(personagemModel: PersonagemModel){
-//            binding.tvNomePersonagemLista.text = personagem.getNome()
+            binding.tvNomePersonagemLista.text = personagemModel.nome
         }
     }
 
@@ -28,15 +28,16 @@ class PersonagemAdapter(
         holder.binding.cvItemLista.setOnClickListener {
             clickPersonagem(personagem)
         }
+        holder.exibirPersonagem(personagem)
     }
 
     override fun getItemCount(): Int {
         return listaDePersonagens.size
     }
 
-    fun atualizarLista(novaLista: MutableList<PersonagemModel>){
+    fun atualizarLista(novaLista: List<PersonagemModel>){
         if (listaDePersonagens.size == 0){
-            listaDePersonagens = novaLista
+            listaDePersonagens = novaLista as MutableList<PersonagemModel>
         }else{
             listaDePersonagens.addAll(novaLista)
         }

@@ -51,8 +51,8 @@ class AddPersonagemFragment : Fragment() {
     }
 
     //TODO: Preciso de ajuda pra implementar o observer
-    private fun initObserver() {
-
-    }
+//    private fun initObserver() {
+//
+//    }
 
 }

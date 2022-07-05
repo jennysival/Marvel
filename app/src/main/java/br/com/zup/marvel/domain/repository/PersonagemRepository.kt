@@ -7,9 +7,9 @@ class PersonagemRepository(private val personagemDAO: PersonagemDAO) {
 
     //TODO: O que é esse suspend?
     //TODO: Esse repository está sendo usado corretamente? Inserindo e consultando os dados do DAO
-    suspend fun getAllPersonagens(): List<PersonagemModel> = personagemDAO.getAllPersonagens()
+    fun getAllPersonagens(): List<PersonagemModel> = personagemDAO.getAllPersonagens()
 
-    suspend fun insertPersonagem(personagem: PersonagemModel){
+    fun insertPersonagem(personagem: PersonagemModel){
         personagemDAO.insertPersonagem(personagem)
     }
 

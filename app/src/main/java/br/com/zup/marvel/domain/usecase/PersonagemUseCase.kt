@@ -10,11 +10,11 @@ class PersonagemUseCase(application: Application) {
     private val personagemRepository = PersonagemRepository(personagemDAO)
 
     //TODO: Como eu trato o erro caso tenha alguma exception?
-    suspend fun getAllPersonagens(): List<PersonagemModel> {
+    fun getAllPersonagens(): List<PersonagemModel> {
         return personagemRepository.getAllPersonagens()
     }
 
-    suspend fun insertPersonagem(personagem: PersonagemModel){
+    fun insertPersonagem(personagem: PersonagemModel){
         personagemRepository.insertPersonagem(personagem)
     }
 
