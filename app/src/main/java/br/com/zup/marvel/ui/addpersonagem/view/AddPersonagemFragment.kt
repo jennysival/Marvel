@@ -5,11 +5,13 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.NavHostFragment
 import br.com.zup.marvel.R
 import br.com.zup.marvel.databinding.FragmentAddPersonagemBinding
 import br.com.zup.marvel.domain.model.PersonagemModel
+import br.com.zup.marvel.ui.addpersonagem.Personagem
 import br.com.zup.marvel.ui.addpersonagem.viewmodel.AddPersonagemViewModel
 
 class AddPersonagemFragment : Fragment() {
@@ -34,13 +36,13 @@ class AddPersonagemFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        val nome = binding.etNomePersonagem.text.toString()
+        val descricao = binding.etDescricaoPersonagem.text.toString()
+        val personagem = Personagem(nome, descricao)
+
         binding.btnCadastrar.setOnClickListener {
-            viewModel.insertPersonagem(
-                PersonagemModel(
-                    nome = binding.etNomePersonagem.text.toString(),
-                    descricao = binding.etDescricaoPersonagem.text.toString()
-                )
-            )
+            viewModel.insertPersonagem(personagem)
+            Toast.makeText(context, "Cadastro com sucesso!", Toast.LENGTH_LONG).show()
         }
 
 //        initObserver()
