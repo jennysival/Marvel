@@ -11,4 +11,6 @@
     <string name="texto_adicione_um_personagem_da_marvel">Adicione um Personagem da Marvel</string>
     <string name="texto_cadastrar_personagem">Cadastrar personagem</string>
     <string name="texto_ver_personagens_cadastrados">Ver personagens cadastrados</string>
+    <string name="lista_personagens_titulo">Lista de Personagens</string>
+    <string name="detalhes_titulo">Detalhes</string>
 </resources>

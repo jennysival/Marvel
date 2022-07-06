@@ -13,6 +13,7 @@ import br.com.zup.marvel.R
 import br.com.zup.marvel.databinding.FragmentAddPersonagemBinding
 import br.com.zup.marvel.ui.addpersonagem.model.Personagem
 import br.com.zup.marvel.ui.addpersonagem.viewmodel.AddPersonagemViewModel
+import br.com.zup.marvel.ui.home.view.HomeActivity
 
 class AddPersonagemFragment : Fragment() {
 

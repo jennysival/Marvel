@@ -15,6 +15,7 @@ import br.com.zup.marvel.R
 import br.com.zup.marvel.ui.listapersonagens.view.adapter.PersonagemAdapter
 import br.com.zup.marvel.databinding.FragmentListaPersonagensBinding
 import br.com.zup.marvel.domain.model.PersonagemModel
+import br.com.zup.marvel.ui.home.view.HomeActivity
 import br.com.zup.marvel.ui.listapersonagens.viewmodel.ListaPersonagensViewModel
 import br.com.zup.marvel.ui.viewstate.ViewState
 
@@ -40,6 +41,9 @@ class ListaPersonagensFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        (activity as HomeActivity).supportActionBar?.title = getString(R.string.lista_personagens_titulo)
+
         initObserver()
         exibirRecyclerView()
     }
