@@ -33,15 +33,12 @@ class AddPersonagemFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-
-
         binding.btnCadastrar.setOnClickListener {
             if(validarCampos()){
                 viewModel.insertPersonagem(recuperarDados())
                 Toast.makeText(context, "Cadastro com sucesso!", Toast.LENGTH_LONG).show()
                 limparCampos()
             }
-
         }
 
         binding.btnVerLista.setOnClickListener {
