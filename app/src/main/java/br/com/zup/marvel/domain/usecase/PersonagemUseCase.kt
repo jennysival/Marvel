@@ -4,7 +4,7 @@ import android.app.Application
 import br.com.zup.marvel.data.datasource.local.PersonagemDataBase
 import br.com.zup.marvel.domain.model.PersonagemModel
 import br.com.zup.marvel.domain.repository.PersonagemRepository
-import br.com.zup.marvel.ui.addpersonagem.Personagem
+import br.com.zup.marvel.ui.addpersonagem.model.Personagem
 import br.com.zup.marvel.ui.viewstate.ViewState
 
 class PersonagemUseCase(application: Application) {

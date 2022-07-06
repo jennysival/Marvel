@@ -11,7 +11,7 @@ import kotlinx.parcelize.Parcelize
 data class PersonagemModel(
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "cod_personagem")
-    var codPersonagem: Long = 1,
+    var codPersonagem: Long = 0,
 
     @ColumnInfo(name = "nome_personagem")
     var nome: String,

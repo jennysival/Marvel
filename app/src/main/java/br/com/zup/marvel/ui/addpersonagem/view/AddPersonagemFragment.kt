@@ -10,8 +10,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.NavHostFragment
 import br.com.zup.marvel.R
 import br.com.zup.marvel.databinding.FragmentAddPersonagemBinding
-import br.com.zup.marvel.domain.model.PersonagemModel
-import br.com.zup.marvel.ui.addpersonagem.Personagem
+import br.com.zup.marvel.ui.addpersonagem.model.Personagem
 import br.com.zup.marvel.ui.addpersonagem.viewmodel.AddPersonagemViewModel
 
 class AddPersonagemFragment : Fragment() {

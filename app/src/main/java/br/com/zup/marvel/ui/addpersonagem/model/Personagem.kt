@@ -1,4 +1,4 @@
-package br.com.zup.marvel.ui.addpersonagem
+package br.com.zup.marvel.ui.addpersonagem.model
 
 data class Personagem(
     var nome: String,
